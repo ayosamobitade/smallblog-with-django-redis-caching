@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bloggy Phone Sale Blog</title>
+</head>
+<body>
+    <h1>Hello some phone sale blog here</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Phone Categories</th>
+                <th>Phone Name</th>
+                <th>Descriptions and others</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for phone in phones %}
+            <tr>
+                <td>{{ phone.category.name}}</td>
+                <td>{{phone.name}}</td>
+                <td><a href='{% url "phone" phone.slug %}'>More info</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    
+</body>
+</html>
